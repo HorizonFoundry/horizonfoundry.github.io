@@ -42,14 +42,13 @@ a:hover{text-decoration-color: rgba(233,238,245,.75)}
 .header-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:20px}
 .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
 .mark{
-  width:42px; height:42px; border-radius:12px;
+  width:42px; height:42px; border-radius:999px;
   display:grid; place-items:center;
-  background: linear-gradient(135deg, rgba(201,130,74,.95), rgba(51,182,177,.65));
-  color:#091014;
-  font-family:var(--mono);
-  font-weight:800;
+  background: transparent;
+  overflow:hidden;
   box-shadow: var(--shadow);
 }
+.mark img{width:42px; height:42px; display:block}
 .brand-text{display:flex; flex-direction:column; gap:2px}
 .brand-name{font-weight:800; letter-spacing:.2px}
 .brand-tagline{font-size:.88rem; color:var(--muted)}
