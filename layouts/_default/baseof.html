@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ .Title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <img src="/images/hf-owl-tight.png" alt="Horizon Foundry" style="height:48px;">
+  </header>
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+</body>
+</html>
