@@ -1,0 +1,14 @@
+baseURL = "https://www.horizon-foundry.com/"
+languageCode = "en-us"
+title = "Horizon Foundry"
+
+[taxonomies]
+  tag = "tags"
+
+[permalinks]
+  essays = "/essays/:slug/"
+  experiments = "/experiments/:slug/"
+  artifacts = "/artifacts/:slug/"
+
+[params]
+  description = "Forging What’s Next. Building Systems That Outlast the Hype."
