@@ -1,6 +1,127 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-<div>
-  {{ .Content }}
-</div>
+
+  <!-- =====================================================
+       HERO SECTION
+       Purpose:
+       - Establish identity (H1)
+       - Reinforce guiding thesis (subheadline + support line)
+       - Provide primary actions (CTAs)
+       - Pair with the stable "Guiding questions" philosophy panel
+       ===================================================== -->
+  <div class="hero-layout">
+
+    <!-- Left Column: Core Identity + Message Hierarchy + CTAs -->
+    <section class="hero">
+
+      <!-- H1: Brand name (largest text on the page) -->
+      <h1>{{ .Params.hero.headline }}</h1>
+
+      <!-- Subheadline: Bold, short brand line (stable positioning). Supportline for clarity -->
+      <p class="subheadline">
+        <strong>{{ .Params.hero.subheadline }}</strong>
+        <span class="supportline">{{ .Params.hero.supportline }}</span>
+      </p>
+
+      <!-- Description: One-sentence explanation of what the lab is -->
+      <p class="hero-desc">{{ .Params.hero.description }}</p>
+
+      <!-- Call-to-Action Buttons -->
+      <div class="cta">
+        <a href="{{ .Params.hero.primary_cta.url }}" class="btn">
+          {{ .Params.hero.primary_cta.label }}
+        </a>
+
+        <a href="{{ .Params.hero.secondary_cta.url }}" class="btn secondary">
+          {{ .Params.hero.secondary_cta.label }}
+        </a>
+      </div>
+
+    </section>
+
+    <!-- Right Column: Stable guiding philosophy (should not change frequently) -->
+    <aside class="guiding">
+      {{ partial "guiding.html" . }}
+    </aside>
+
+  </div>
+
+
+  <!-- =====================================================
+       WHAT YOU'LL FIND HERE
+       Purpose:
+       - High-level overview of content areas
+       - Each card is a clickable entry point into a section
+       Data Source:
+       - content/_index.md -> front matter -> sections[]
+       ===================================================== -->
+  <section class="what">
+    <h2>What You'll Find Here</h2>
+
+    <div class="grid">
+      {{ range .Params.sections }}
+        <a href="{{ .url }}" class="card card-link">
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+        </a>
+      {{ end }}
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       CORE PILLARS
+       Purpose:
+       - Reinforce the "operating system" of Horizon Foundry
+       - These are the internal north stars / principles
+       Data Source:
+       - content/_index.md -> front matter -> pillars[]
+       ===================================================== -->
+  <section class="pillars">
+    <h2>Core pillars</h2>
+
+    <div class="grid">
+      {{ range .Params.pillars }}
+        <div class="card">
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       UP NEXT
+       Purpose:
+       - Preview upcoming writing with low-friction commitments
+       Data Source:
+       - content/_index.md -> front matter -> up_next[]
+       ===================================================== -->
+  <section class="up-next">
+    <h2>Up next</h2>
+    <p>Here are a few pieces currently in draft and planned for release.</p>
+
+    <ul>
+      {{ range .Params.up_next }}
+        <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+  </section>
+
+
+  <!-- =====================================================
+       WANT UPDATES
+       Purpose:
+       - Provide direct contact endpoints until newsletter exists
+       ===================================================== -->
+  <section class="want-updates">
+    <div class="card">
+      <p>Want updates? For now, use email, a newsletter will come later.</p>
+      <p>
+        <a href="mailto:cvDataScience@gmail.com">Email</a>
+        | <a href="https://www.linkedin.com/in/charlesvillarreal">LinkedIn</a>
+      </p>
+    </div>
+  </section>
+
 {{ end }}
