@@ -19,10 +19,10 @@
   <!-- Primary Stylesheet -->
   <link rel="stylesheet" href="/css/styles.css">
 
-    <!-- Favicons / App Icons -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Favicons / App Icons -->
+  <link rel="icon" href="/favicon.ico?v={{ .Site.Params.assetVersion }}" sizes="any">
+  <link rel="icon" href="/favicon.svg?v={{ .Site.Params.assetVersion }}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v={{ .Site.Params.assetVersion }}">
 </head>
 
 <body>
@@ -67,11 +67,10 @@
        ===================================================== -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <p>© {{ now.Year }} Horizon Foundry</p>
-      <p>Forging What’s Next. Building Systems That Outlast the Hype.</p>
+      <p>&copy; {{ now.Year }} Horizon Foundry</p>
+      <p>Forging What's Next. Building Systems That Outlast the Hype.</p>
     </div>
   </footer>
 
 </body>
 </html>
-

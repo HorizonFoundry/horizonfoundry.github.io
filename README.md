@@ -1,6 +1,6 @@
-# Horizon Foundry (v1) — GitHub Pages
+# Horizon Foundry (v1) - Hugo + GitHub Pages
 
-This is a static v1 site (plain HTML/CSS). No build step.
+This is a Hugo static site deployed by GitHub Actions.
 
 ## Recommended GitHub Pages setup (clean URLs)
 
@@ -16,7 +16,7 @@ This avoids the "/<repo-name>/" base-path issue and keeps absolute links (e.g., 
 
 1. Create the repo **<your-github-user-or-org>.github.io**
 2. Commit/push this folder to `main`
-3. GitHub repo → **Settings → Pages**
+3. GitHub repo -> **Settings -> Pages**
    - Source: **Deploy from a branch**
    - Branch: **main** / **root**
 4. Add your custom domain in the Pages settings:
@@ -30,7 +30,7 @@ Keep any existing MX/email records. Add these website records:
 - Apex/root domain (`@`): add the 4 **A** records GitHub Pages uses
 - `www`: add a **CNAME** to your GitHub Pages host (`<your-github-user-or-org>.github.io`)
 
-GitHub’s UI will also show the exact records it expects for verification.
+GitHub's UI will also show the exact records it expects for verification.
 
 ## Using Codex effectively
 
