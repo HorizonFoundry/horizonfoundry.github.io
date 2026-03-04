@@ -11,4 +11,5 @@ title = "Horizon Foundry"
   artifacts = "/artifacts/:slug/"
 
 [params]
-  description = "Forging What’s Next. Building Systems That Outlast the Hype."
+  assetVersion = "1"
+  description = "Forging What's Next. Building Systems That Outlast the Hype."
