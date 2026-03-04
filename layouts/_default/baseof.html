@@ -1,19 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- =====================================================
+       Document Metadata
+       ===================================================== -->
   <meta charset="UTF-8">
-  <title>{{ .Title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Dynamic Page Title -->
+  <title>
+    {{ if .IsHome }}
+      Horizon Foundry
+    {{ else }}
+      {{ .Title }} | Horizon Foundry
+    {{ end }}
+  </title>
+
+  <!-- Primary Stylesheet -->
   <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Favicons / App Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
+
 <body>
-  <header>
-    <img src="/images/hf-owl-tight.png" alt="Horizon Foundry" style="height:48px;">
+
+  <!-- =====================================================
+       Site Header
+       Brand + Primary Navigation
+       ===================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Brand Identity -->
+      <div class="brand">
+        <img src="/images/hf-owl-tight.png" alt="Horizon Foundry Logo">
+        <div class="brand-title">Engineering with intent.</div>
+      </div>
+
+      <!-- Primary Navigation -->
+      <nav class="nav">
+        <a href="/about/">About</a>
+        <a href="/essays/">Essays</a>
+        <a href="/artifacts/">Artifacts</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+
+    </div>
   </header>
 
-  <main>
+
+  <!-- =====================================================
+       Main Content Area
+       Injected by Page Templates
+       ===================================================== -->
+  <main class="container">
     {{ block "main" . }}{{ end }}
   </main>
 
+
+  <!-- =====================================================
+       Site Footer
+       Minimal + Durable Identity Signal
+       ===================================================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© {{ now.Year }} Horizon Foundry</p>
+      <p>Forging What’s Next. Building Systems That Outlast the Hype.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
+
