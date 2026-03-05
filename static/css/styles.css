@@ -269,3 +269,21 @@ p {
   border-color: var(--border);
 }
 
+
+/* =====================================================
+   ARTICLE MEDIA
+   Keep content images responsive without upscaling.
+===================================================== */
+
+article img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Keep article images centered and constrained on wide viewports. */
+article img {
+  max-width: min(100%, 860px);
+  height: auto;
+  display: block;
+  margin: 1.25rem auto;
+}
