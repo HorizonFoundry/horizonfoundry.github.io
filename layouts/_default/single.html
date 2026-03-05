@@ -4,6 +4,20 @@
     <h1>{{ .Title }}</h1>
   {{ end }}
 
+  {{ if eq .RelPermalink "/contact/" }}
+    {{ if (fileExists "static/images/contact-hero.webp") }}
+      <figure class="section-hero">
+        <img
+          class="section-hero__img"
+          src='{{ "/images/contact-hero.webp" | relURL }}'
+          alt="Professional contact illustration representing collaboration and direct communication"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    {{ end }}
+  {{ end }}
+
   {{ if eq .Section "essays" }}
     {{ with (.Param "author") }}
       <p><strong>By {{ . }}</strong></p>
@@ -25,4 +39,3 @@
   {{ end }}
 </article>
 {{ end }}
-
