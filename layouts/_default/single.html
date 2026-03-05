@@ -6,7 +6,7 @@
 
   {{ if eq .RelPermalink "/contact/" }}
     {{ if (fileExists "static/images/contact-hero.webp") }}
-      <figure class="section-hero">
+      <figure class="section-hero section-hero--contact">
         <img
           class="section-hero__img"
           src='{{ "/images/contact-hero.webp" | relURL }}'
@@ -39,3 +39,4 @@
   {{ end }}
 </article>
 {{ end }}
+
