@@ -1,12 +1,26 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 
+{{ if eq .Section "essays" }}
+  {{ if (fileExists "static/images/writing-hero.webp") }}
+    <figure class="section-hero">
+      <img
+        class="section-hero__img"
+        src='{{ "/images/writing-hero.webp" | relURL }}'
+        alt="Writing desk with notebook and keyboard, representing focused engineering essays"
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+  {{ end }}
+{{ end }}
+
 {{ if .Pages }}
   <ul>
     {{ range .Pages }}
       <li>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        <small> â€” {{ .Date.Format "Jan 2, 2006" }}</small>
+        <small> — {{ .Date.Format "Jan 2, 2006" }}</small>
       </li>
     {{ end }}
   </ul>

@@ -364,3 +364,20 @@ article img {
     max-width: 520px;
   }
 }
+/* =====================================================
+   SECTION HERO IMAGE
+   - Used on Writing and Workbench list pages
+   - Full-width responsive image constrained to readable content width
+===================================================== */
+
+.section-hero {
+  margin: 0 0 1.5rem 0;
+}
+
+.section-hero__img {
+  width: 100%;
+  max-width: 860px;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}

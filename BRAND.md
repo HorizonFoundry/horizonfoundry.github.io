@@ -89,3 +89,12 @@ Footer:
 - Minimal
 - Single horizontal rule
 - Subtle text
+
+## Reusable Components
+
+Section Hero Image (Writing/Workbench lists):
+- Single supporting image below page title
+- Responsive width (`width: 100%`, `height: auto`)
+- Max visual width: 860px
+- Rounded corners (12px)
+- Use optimized `.webp` assets under `/static/images/`

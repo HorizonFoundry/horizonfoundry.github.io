@@ -1,6 +1,19 @@
 {{ define "main" }}
 <section>
   <h1>{{ .Title }}</h1>
+
+  {{ if (fileExists "static/images/workbench-hero.webp") }}
+    <figure class="section-hero">
+      <img
+        class="section-hero__img"
+        src='{{ "/images/workbench-hero.webp" | relURL }}'
+        alt="Workbench setup with tools and hardware components for practical build experiments"
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+  {{ end }}
+
   <p>Coming soon. The Workbench will publish practical build assets in three streams:</p>
   <ul>
     <li>Frameworks</li>
