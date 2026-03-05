@@ -1,6 +1,7 @@
 ---
 title: "Engineering With Intent: Why Build Is Not the Goal"
 date: 2026-03-04
+author: "Charles Villarreal"
 description: "Shipping is a hypothesis, not a finish line. A practical framework to connect engineering work to measurable value."
 tags: ["engineering-leadership", "systems-thinking", "product-strategy", "measurement", "ai"]
 draft: false
@@ -8,7 +9,6 @@ featured_image: "/images/essays/engineering-with-intent/engineering-with-intent-
 images:
   - "/images/essays/engineering-with-intent/engineering-with-intent-hero-16x9.png"
 ---
-
 ![Minimal hero illustration: a finish line that hints at uncertainty](/images/essays/engineering-with-intent/engineering-with-intent-hero-16x9.png)
 
 I’ve watched this scene play out more times than I’d like to admit.
@@ -442,3 +442,5 @@ Think about some of the hottest spaces in tech over the past few years, the meta
 **When the goal is durability,**
 **Don’t chase hype,**
 **Build solutions that outlast it.**
+
+

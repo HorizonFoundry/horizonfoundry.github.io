@@ -5,6 +5,9 @@
   {{ end }}
 
   {{ if eq .Section "essays" }}
+    {{ with (.Param "author") }}
+      <p><strong>By {{ . }}</strong></p>
+    {{ end }}
     <p><em>{{ .Date.Format "January 2, 2006" }}</em></p>
   {{ end }}
 
@@ -22,5 +25,4 @@
   {{ end }}
 </article>
 {{ end }}
-
 
