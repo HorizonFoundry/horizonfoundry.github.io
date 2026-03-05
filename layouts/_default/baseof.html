@@ -29,22 +29,40 @@
 
   <!-- =====================================================
        Site Header
-       Brand + Primary Navigation
+       Home: mark + intent text
+       Start Here: linked mark + intent text
+       Other pages: linked mark + stacked lockup
        ===================================================== -->
   <header class="site-header">
     <div class="header-inner">
 
       <!-- Brand Identity -->
-      <div class="brand">
-        <img src="/images/hf-owl-tight.png" alt="Horizon Foundry Logo">
-        <div class="brand-title">Engineering with intent.</div>
-      </div>
+      {{ if .IsHome }}
+        <div class="site-brand home-brand" aria-label="Horizon Foundry">
+          <img class="brand-mark" src="/images/hf-owl-tight.png" alt="Horizon Foundry logo">
+          <span class="home-brand-text">Engineering with intent</span>
+        </div>
+      {{ else if eq .RelPermalink "/start-here/" }}
+        <a class="site-brand" href="{{ "/" | relURL }}" aria-label="Horizon Foundry home">
+          <img class="brand-mark" src="/images/hf-owl-tight.png" alt="Horizon Foundry logo">
+          <span class="home-brand-text">Engineering with intent</span>
+        </a>
+      {{ else }}
+        <a class="site-brand" href="{{ "/" | relURL }}" aria-label="Horizon Foundry home">
+          <img class="brand-mark" src="/images/hf-owl-tight.png" alt="Horizon Foundry logo">
+          <span class="brand-lockup">
+            <span class="brand-title">Horizon Foundry</span>
+            <span class="brand-tagline">Forging What's Next</span>
+          </span>
+        </a>
+      {{ end }}
 
       <!-- Primary Navigation -->
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary">
         <a href="/about/">About</a>
-        <a href="/essays/">Essays</a>
-        <a href="/artifacts/">Artifacts</a>
+        <a href="/essays/">Writing</a>
+        <a href="/teaching/">Teaching</a>
+        <a href="/artifacts/">Workbench</a>
         <a href="/contact/">Contact</a>
       </nav>
 
@@ -74,3 +92,4 @@
 
 </body>
 </html>
+

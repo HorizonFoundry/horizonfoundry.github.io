@@ -1,7 +1,12 @@
 {{ define "main" }}
 <article>
-  <h1>{{ .Title }}</h1>
-  <p><em>{{ .Date.Format "January 2, 2006" }}</em></p>
+  {{ if and (ne .RelPermalink "/start-here/") (ne .RelPermalink "/about/") }}
+    <h1>{{ .Title }}</h1>
+  {{ end }}
+
+  {{ if eq .Section "essays" }}
+    <p><em>{{ .Date.Format "January 2, 2006" }}</em></p>
+  {{ end }}
 
   <div>
     {{ .Content }}
@@ -17,3 +22,5 @@
   {{ end }}
 </article>
 {{ end }}
+
+

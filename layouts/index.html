@@ -1,5 +1,11 @@
 {{ define "main" }}
 
+  {{ $writingPages := sort (where .Site.RegularPages "Section" "essays") "Date" "desc" }}
+  {{ $latestWritingURL := "/essays/" }}
+  {{ if gt (len $writingPages) 0 }}
+    {{ $latestWritingURL = (index $writingPages 0).RelPermalink }}
+  {{ end }}
+
   <!-- =====================================================
        HERO SECTION
        Purpose:
@@ -16,7 +22,7 @@
       <!-- H1: Brand name (largest text on the page) -->
       <h1>{{ .Params.hero.headline }}</h1>
 
-      <!-- Subheadline: Bold, short brand line (stable positioning). Supportline for clarity -->
+      <!-- Subheadline + supportline rendered as two explicit lines -->
       <p class="subheadline">
         <strong>{{ .Params.hero.subheadline }}</strong>
         <span class="supportline">{{ .Params.hero.supportline }}</span>
@@ -31,7 +37,7 @@
           {{ .Params.hero.primary_cta.label }}
         </a>
 
-        <a href="{{ .Params.hero.secondary_cta.url }}" class="btn secondary">
+        <a href="{{ $latestWritingURL }}" class="btn secondary">
           {{ .Params.hero.secondary_cta.label }}
         </a>
       </div>
@@ -44,28 +50,6 @@
     </aside>
 
   </div>
-
-
-  <!-- =====================================================
-       WHAT YOU'LL FIND HERE
-       Purpose:
-       - High-level overview of content areas
-       - Each card is a clickable entry point into a section
-       Data Source:
-       - content/_index.md -> front matter -> sections[]
-       ===================================================== -->
-  <section class="what">
-    <h2>What You'll Find Here</h2>
-
-    <div class="grid">
-      {{ range .Params.sections }}
-        <a href="{{ .url }}" class="card card-link">
-          <h3>{{ .title }}</h3>
-          <p>{{ .description }}</p>
-        </a>
-      {{ end }}
-    </div>
-  </section>
 
 
   <!-- =====================================================
@@ -85,6 +69,34 @@
           <h3>{{ .title }}</h3>
           <p>{{ .description }}</p>
         </div>
+      {{ end }}
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       WHAT YOU'LL FIND HERE
+       Purpose:
+       - Two bucketed entry points: Writing and Workbench
+       Data Source:
+       - content/_index.md -> front matter -> sections[]
+       ===================================================== -->
+  <section class="what">
+    <h2>What You'll Find Here</h2>
+
+    <div class="grid">
+      {{ range .Params.sections }}
+        <a href="{{ .url }}" class="card card-link">
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+          {{ with .items }}
+            <ul class="card-list">
+              {{ range . }}
+                <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          {{ end }}
+        </a>
       {{ end }}
     </div>
   </section>

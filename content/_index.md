@@ -4,31 +4,31 @@ title: "Horizon Foundry"
 hero:
   headline: "Horizon Foundry"
   subheadline: "Forging What's Next."
-  supportline: "Building is not the goal. Creating Value is."
+  supportline: "Stop chasing Hype. Start creating Value."
   description: "A personal engineering lab building durable systems at the intersection of software, data, and AI - aligned to measurable value."
   primary_cta:
-    label: "Read the manifesto"
-    url: "/essays/"
+    label: "Start here"
+    url: "/start-here/"
   secondary_cta:
-    label: "Browse essays"
+    label: "Read the latest"
     url: "/essays/"
 
 sections:
-  - title: "Essays"
-    description: "Systems thinking, architecture, and engineering leadership - grounded in real delivery constraints."
+  - title: "Writing"
+    description: "Essays, lectures, and field notes"
+    items:
+      - "Essays"
+      - "Lectures"
+      - "Field Notes"
     url: "/essays/"
 
-  - title: "Frameworks"
-    description: "Practical patterns that connect technical work to measurable outcomes and north star alignment."
+  - title: "Workbench"
+    description: "Frameworks, demonstrations, and exercises"
+    items:
+      - "Frameworks"
+      - "Demonstrations"
+      - "Exercises"
     url: "/artifacts/"
-
-  - title: "Demonstrations"
-    description: "Artifacts from a personal sandbox: prototypes, reference implementations, and experiments."
-    url: "/experiments/"
-
-  - title: "Teaching notes"
-    description: "Reflections from teaching graduate-level data analytics - translating concepts into practice."
-    url: "/essays/"
 
 pillars:
   - title: "Systems thinking"
@@ -47,5 +47,5 @@ up_next:
   - "The SaaS-pocalypse Is a Friction Shift, Not a Collapse"
   - "Why Words Matter in the Agentic Era"
   - "Architecting a Cognitive System: Building my AI-augmented second brain"
-
 ---
+
