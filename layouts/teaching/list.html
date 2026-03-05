@@ -42,8 +42,8 @@
       <figure class="teaching-hero__figure">
         <img
           class="teaching-hero__img"
-          src="/images/cv-lecture-720w.webp"
-          srcset="/images/cv-lecture-360w.webp 360w, /images/cv-lecture-720w.webp 720w"
+          src='{{ "/images/cv-lecture-720w.webp" | relURL }}'
+          srcset='{{ "/images/cv-lecture-360w.webp" | relURL }} 360w, {{ "/images/cv-lecture-720w.webp" | relURL }} 720w'
           sizes="(max-width: 900px) 92vw, 360px"
           alt="Professor lecturing in front of a chalkboard with machine learning diagrams"
           loading="lazy"
