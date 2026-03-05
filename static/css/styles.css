@@ -388,11 +388,11 @@ article img {
   }
 }
 
-/* Contact page variant: half-size visual with square framing. */
+/* Contact page variant: compact visual with square framing. */
 .section-hero--contact {
-  width: 50%;
-  max-width: 430px;
-  min-width: 220px;
+  width: 34%;
+  max-width: 220px;
+  min-width: 160px;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 12px;
@@ -408,8 +408,10 @@ article img {
 
 @media (max-width: 700px) {
   .section-hero--contact {
-    width: 72vw;
-    max-width: 240px;
-    min-width: 0;
+    width: 46vw;
+    max-width: 160px;
+    min-width: 120px;
   }
 }
+
+
