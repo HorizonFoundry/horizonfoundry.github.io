@@ -3,7 +3,7 @@ title: "Contact"
 layout: "single"
 ---
 
-Reach out directly for collaboration or conversation.
+Want to have a conversation or collaborate? Reach out directly via email or LinkedIn!
 
 Email: [cvDataScience@gmail.com](mailto:cvDataScience@gmail.com)
 

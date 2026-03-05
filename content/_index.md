@@ -5,13 +5,13 @@ hero:
   headline: "Horizon Foundry"
   subheadline: "Forging What's Next."
   supportline: "Stop chasing Hype. Start creating Value."
-  description: "A personal engineering lab building durable systems at the intersection of software, data, and AI - aligned to measurable value."
+  description: "An engineering lab building durable solutions at the intersection of software, data, and AI - aligned to measurable value."
   primary_cta:
     label: "Start here"
     url: "/start-here/"
   secondary_cta:
     label: "Read the latest"
-    url: "/essays/"
+    url: "/essays/engineering-with-intent-why-build-is-not-the-goal/"
 
 sections:
   - title: "Writing"
@@ -43,7 +43,6 @@ pillars:
     description: "Resist trend-chasing, adopt what endures, build what scales responsibly."
 
 up_next:
-  - "Engineering With Intent: Why build is not the goal"
   - "The SaaS-pocalypse Is a Friction Shift, Not a Collapse"
   - "Why Words Matter in the Agentic Era"
   - "Architecting a Cognitive System: Building my AI-augmented second brain"
