@@ -1,0 +1,49 @@
+{{ define "main" }}
+<section>
+  <h1>{{ .Title }}</h1>
+  <p>Applied teaching artifacts across writing and workbench streams.</p>
+</section>
+
+{{ $lectures := where .Site.RegularPages "Params.format" "lecture" }}
+{{ $exercises := where .Site.RegularPages "Params.format" "exercise" }}
+{{ $fieldNotes := where .Site.RegularPages "Params.format" "field_note" }}
+
+<section>
+  <h2>Lectures</h2>
+  {{ if gt (len $lectures) 0 }}
+    <ul>
+      {{ range sort $lectures "Date" "desc" }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    <p>Coming soon.</p>
+  {{ end }}
+</section>
+
+<section>
+  <h2>Exercises</h2>
+  {{ if gt (len $exercises) 0 }}
+    <ul>
+      {{ range sort $exercises "Date" "desc" }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    <p>Coming soon.</p>
+  {{ end }}
+</section>
+
+<section>
+  <h2>Field Notes</h2>
+  {{ if gt (len $fieldNotes) 0 }}
+    <ul>
+      {{ range sort $fieldNotes "Date" "desc" }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    <p>Coming soon.</p>
+  {{ end }}
+</section>
+{{ end }}
