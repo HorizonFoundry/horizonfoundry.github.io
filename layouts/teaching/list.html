@@ -1,49 +1,116 @@
 {{ define "main" }}
-<section>
-  <h1>{{ .Title }}</h1>
-  <p>Applied teaching artifacts across writing and workbench streams.</p>
+
+{{/* 
+  Teaching hub page
+  - This page is a curated view across the site, grouped into:
+      Lectures (Writing), Exercises (Workbench), Field Notes (Writing)
+  - Content is selected via front matter param: Params.format
+      format: lecture | exercise | field_note
+  - Initial implementation keeps everything on one page; anchors provide quick navigation.
+  - When volume grows, this can be split into /teaching/lectures, /teaching/exercises, /teaching/field-notes
+*/}}
+
+<section class="teaching-hero">
+  <div class="teaching-hero__left">
+    <h1>{{ .Title }}</h1>
+
+    {{/* Keep the lede short; Teaching should feel like a practical toolkit, not a manifesto. */}}
+    <p class="teaching-hero__lede">Applied teaching artifacts across writing and workbench streams.</p>
+
+    {{/* 
+      Anchor navigation for quick scanning.
+      NOTE: IDs must match the section IDs below (#lectures, #exercises, #field-notes).
+    */}}
+    <nav class="teaching-hero__nav" aria-label="Teaching sections">
+      <ul>
+        <li><a href="#lectures">Lectures</a></li>
+        <li><a href="#exercises">Exercises</a></li>
+        <li><a href="#field-notes">Field Notes</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="teaching-hero__right">
+    {{/* 
+      Supporting image (not a hero image).
+      Best practice: render only if the expected static asset exists to avoid broken images.
+      NOTE: assets should exist under /static/images/:
+        /static/images/cv-lecture-360w.webp
+        /static/images/cv-lecture-720w.webp
+    */}}
+    {{ if (fileExists "static/images/cv-lecture-720w.webp") }}
+      <figure class="teaching-hero__figure">
+        <img
+          class="teaching-hero__img"
+          src="/images/cv-lecture-720w.webp"
+          srcset="/images/cv-lecture-360w.webp 360w, /images/cv-lecture-720w.webp 720w"
+          sizes="(max-width: 900px) 92vw, 360px"
+          alt="Professor lecturing in front of a chalkboard with machine learning diagrams"
+          loading="lazy"
+          decoding="async"
+        />
+        {{/* Optional caption if you want a subtle credibility cue under the image. */}}
+        {{/* <figcaption class="teaching-hero__caption">Lectures, exercises, and field notes—built for real delivery constraints.</figcaption> */}}
+      </figure>
+    {{ end }}
+  </div>
 </section>
 
+{{/* 
+  Query content across the site by front matter param.
+  NOTE: .Site.RegularPages includes all non-list pages. If you later need drafts excluded, 
+  ensure draft handling matches your site config.
+*/}}
 {{ $lectures := where .Site.RegularPages "Params.format" "lecture" }}
 {{ $exercises := where .Site.RegularPages "Params.format" "exercise" }}
 {{ $fieldNotes := where .Site.RegularPages "Params.format" "field_note" }}
 
-<section>
+{{/* 
+  Lists are sorted newest-first by Date.
+  Assumption: each page has a Date set (front matter date or git info).
+  Hub page constraint: cap lists so the page doesn't become a wall as content grows.
+*/}}
+
+<section id="lectures">
   <h2>Lectures</h2>
   {{ if gt (len $lectures) 0 }}
     <ul>
-      {{ range sort $lectures "Date" "desc" }}
+      {{ range first 8 (sort $lectures "Date" "desc") }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{ end }}
     </ul>
+    <p><a href="/writing/">View all writing →</a></p>
   {{ else }}
     <p>Coming soon.</p>
   {{ end }}
 </section>
 
-<section>
+<section id="exercises">
   <h2>Exercises</h2>
   {{ if gt (len $exercises) 0 }}
     <ul>
-      {{ range sort $exercises "Date" "desc" }}
+      {{ range first 8 (sort $exercises "Date" "desc") }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{ end }}
     </ul>
+    <p><a href="/workbench/">View all workbench →</a></p>
   {{ else }}
     <p>Coming soon.</p>
   {{ end }}
 </section>
 
-<section>
+<section id="field-notes">
   <h2>Field Notes</h2>
   {{ if gt (len $fieldNotes) 0 }}
     <ul>
-      {{ range sort $fieldNotes "Date" "desc" }}
+      {{ range first 8 (sort $fieldNotes "Date" "desc") }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{ end }}
     </ul>
+    <p><a href="/writing/">View all writing →</a></p>
   {{ else }}
     <p>Coming soon.</p>
   {{ end }}
 </section>
+
 {{ end }}

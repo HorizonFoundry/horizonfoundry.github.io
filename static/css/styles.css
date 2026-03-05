@@ -1,5 +1,5 @@
 /* =====================================================
-   HORIZON FOUNDRY — GLOBAL THEME VARIABLES
+   HORIZON FOUNDRY ï¿½ GLOBAL THEME VARIABLES
    Light-first system theme with dark-mode override
 ===================================================== */
 
@@ -286,4 +286,81 @@ article img {
   height: auto;
   display: block;
   margin: 1.25rem auto;
+}
+
+
+/* =====================================================
+   TEACHING PAGE: HERO LAYOUT
+   - Two-column header region for /teaching/
+   - Left: title, lede, anchor nav
+   - Right: supporting image (kept intentionally small)
+   Notes:
+   - Breakpoint aligns with the templateâ€™s sizes attribute (900px).
+   - Desktop image target width is ~360px; 2x srcset should provide 720w.
+===================================================== */
+
+.teaching-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin: 1rem 0 1.75rem 0;
+  align-items: start;
+}
+
+/* Keep intro text readable; prevents overly long lines on wide viewports. */
+.teaching-hero__lede {
+  max-width: 60ch;
+}
+
+/* Compact, scan-friendly anchor nav that wraps cleanly on small widths. */
+.teaching-hero__nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0 0;
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+/* Local link styling: subtle underline-on-hover without changing global <a> styling. */
+.teaching-hero__nav a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.teaching-hero__nav a:hover {
+  border-bottom-color: currentColor;
+}
+
+.teaching-hero__figure {
+  margin: 0;
+}
+
+/* Supporting image: cap width so it doesn't compete with the content hierarchy. */
+.teaching-hero__img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Desktop: switch to 2 columns (content + fixed image column). */
+@media (min-width: 900px) {
+  .teaching-hero {
+    grid-template-columns: 1fr 360px;
+    gap: 1.5rem;
+  }
+
+  .teaching-hero__right {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* Mobile: allow a bit more width while still avoiding "hero image" dominance. */
+@media (max-width: 899px) {
+  .teaching-hero__img {
+    max-width: 520px;
+  }
 }
