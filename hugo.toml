@@ -10,6 +10,11 @@ title = "Horizon Foundry"
   experiments = "/experiments/:slug/"
   artifacts = "/artifacts/:slug/"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
   assetVersion = "1"
   description = "Forging What's Next. Building Systems That Outlast the Hype."
