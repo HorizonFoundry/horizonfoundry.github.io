@@ -5,6 +5,29 @@ description: "The operator behind Horizon Foundry-engineering with intent, measu
 
 # About the Founder
 
+<div class="founder-headshot">
+  <img
+    src="/images/charles-villarreal-headshot.jpg"
+    alt="Charles Villarreal, Founder of Horizon Foundry"
+    width="420"
+    height="420"
+  />
+</div>
+
+<style>
+.founder-headshot {
+  margin: 1.75rem 0 1.25rem 0;
+}
+
+.founder-headshot img {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+</style>
+
 ## Charles Villarreal
 
 Charles Villarreal is a software engineering and data leader with experience building and guiding analytics, AI, and engineering systems across industries. He also teaches graduate-level courses in Data Analytics, helping develop the next generation of data professionals.
