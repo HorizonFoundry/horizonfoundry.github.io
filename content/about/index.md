@@ -25,6 +25,7 @@ description: "The operator behind Horizon Foundry-engineering with intent, measu
   height: auto;
   border-radius: 6px;
   display: block;
+  margin: 0;
 }
 </style>
 
