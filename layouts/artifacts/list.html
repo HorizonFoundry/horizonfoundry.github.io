@@ -14,11 +14,22 @@
     </figure>
   {{ end }}
 
-  <p>Coming soon. The Workbench will publish practical build assets in three streams:</p>
-  <ul>
-    <li>Frameworks</li>
-    <li>Demonstrations</li>
-    <li>Exercises</li>
-  </ul>
+  {{ if .Pages }}
+    <ul>
+      {{ range .Pages }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <small> &mdash; {{ .Date.Format "Jan 2, 2006" }}</small>
+        </li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    <p>Coming soon. The Workbench will publish practical build assets in three streams:</p>
+    <ul>
+      <li>Frameworks</li>
+      <li>Demonstrations</li>
+      <li>Exercises</li>
+    </ul>
+  {{ end }}
 </section>
 {{ end }}
