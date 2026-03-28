@@ -1,0 +1,5 @@
+# Horizon Foundry
+
+A personal engineering lab focused on building durable systems at the intersection of software, data, and AI.
+
+Primary tagline: Forging What’s Next.
