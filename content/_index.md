@@ -11,7 +11,7 @@ hero:
     url: "/start-here/"
   secondary_cta:
     label: "Read the latest"
-    url: "/essays/engineering-with-intent-why-build-is-not-the-goal/"
+    url: "/artifacts/second-brain-daily-review-and-the-case-for-modular-cognitive-infrastructure/"
 
 sections:
   - title: "Writing"
