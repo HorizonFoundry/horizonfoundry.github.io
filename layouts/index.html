@@ -1,11 +1,5 @@
 {{ define "main" }}
 
-  {{ $writingPages := sort (where .Site.RegularPages "Section" "essays") "Date" "desc" }}
-  {{ $latestWritingURL := "/essays/" }}
-  {{ if gt (len $writingPages) 0 }}
-    {{ $latestWritingURL = (index $writingPages 0).RelPermalink }}
-  {{ end }}
-
   <!-- =====================================================
        HERO SECTION
        Purpose:
@@ -37,7 +31,7 @@
           {{ .Params.hero.primary_cta.label }}
         </a>
 
-        <a href="{{ $latestWritingURL }}" class="btn secondary">
+        <a href="{{ .Params.hero.secondary_cta.url }}" class="btn secondary">
           {{ .Params.hero.secondary_cta.label }}
         </a>
       </div>
