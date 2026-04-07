@@ -95,3 +95,16 @@ When making template/CSS/content changes:
 
 ## 9) If OpenAI/Codex docs are needed
 Use the OpenAI developer documentation MCP server for OpenAI/Codex/API details.
+
+---
+
+## 10) Task handoff protocol
+- For scoped implementation work, read the relevant file in `docs/tasks/` before making changes.
+- If a handoff file exists for the task, read it first and continue from current repo state.
+- Do not restart a task from scratch if partial work already exists in the branch.
+- Update the task handoff file before stopping with:
+  - current status
+  - files changed
+  - commands run
+  - validation results
+  - remaining work / blockers
