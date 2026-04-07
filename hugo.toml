@@ -15,6 +15,13 @@ title = "Horizon Foundry"
     [markup.goldmark.renderer]
       unsafe = true
 
+[services.googleAnalytics]
+  id = "G-T78Q5ZFXR0"
+
+[privacy.googleAnalytics]
+  disable = false
+  respectDoNotTrack = true
+
 [params]
   assetVersion = "1"
   description = "Forging What's Next. Building Systems That Outlast the Hype."

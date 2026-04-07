@@ -27,11 +27,23 @@
 
       <!-- Call-to-Action Buttons -->
       <div class="cta">
-        <a href="{{ .Params.hero.primary_cta.url }}" class="btn">
+        <a
+          href="{{ .Params.hero.primary_cta.url }}"
+          class="btn"
+          data-cta-track="true"
+          data-cta-label="{{ .Params.hero.primary_cta.label }}"
+          data-cta-location="homepage_hero"
+          data-cta-type="primary">
           {{ .Params.hero.primary_cta.label }}
         </a>
 
-        <a href="{{ .Params.hero.secondary_cta.url }}" class="btn secondary">
+        <a
+          href="{{ .Params.hero.secondary_cta.url }}"
+          class="btn secondary"
+          data-cta-track="true"
+          data-cta-label="{{ .Params.hero.secondary_cta.label }}"
+          data-cta-location="homepage_hero"
+          data-cta-type="secondary">
           {{ .Params.hero.secondary_cta.label }}
         </a>
       </div>
@@ -125,7 +137,14 @@
       <p>Want updates? For now, use email, a newsletter will come later.</p>
       <p>
         <a href="mailto:cvDataScience@gmail.com">Email</a>
-        | <a href="https://www.linkedin.com/in/charlesvillarreal">LinkedIn</a>
+        | <a
+          href="https://www.linkedin.com/in/charlesvillarreal"
+          data-cta-track="true"
+          data-cta-label="LinkedIn"
+          data-cta-location="homepage_want_updates"
+          data-cta-type="social">
+          LinkedIn
+        </a>
       </p>
     </div>
   </section>
