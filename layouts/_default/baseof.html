@@ -23,6 +23,11 @@
   <link rel="icon" href="/favicon.ico?v={{ .Site.Params.assetVersion }}" sizes="any">
   <link rel="icon" href="/favicon.svg?v={{ .Site.Params.assetVersion }}" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v={{ .Site.Params.assetVersion }}">
+
+  <!-- Load analytics only for production builds to keep local development clean. -->
+  {{ if hugo.IsProduction }}
+    {{ template "_internal/google_analytics.html" . }}
+  {{ end }}
 </head>
 
 <body>
@@ -89,6 +94,10 @@
       <p>Forging What's Next. Building Systems That Outlast the Hype.</p>
     </div>
   </footer>
+
+  {{ if hugo.IsProduction }}
+    <script src="/js/cta-tracking.js"></script>
+  {{ end }}
 
 </body>
 </html>
