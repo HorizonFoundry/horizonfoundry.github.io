@@ -11,7 +11,7 @@ hero:
     url: "/start-here/"
   secondary_cta:
     label: "Read the latest"
-    url: "/artifacts/second-brain-daily-review-and-the-case-for-modular-cognitive-infrastructure/"
+    url: "/essays/the-saas-pocalypse-is-a-friction-shift-not-a-collapse/"
 
 sections:
   - title: "Writing"
@@ -43,7 +43,6 @@ pillars:
     description: "Resist trend-chasing, adopt what endures, build what scales responsibly."
 
 up_next:
-  - "The SaaS-pocalypse Is a Friction Shift, Not a Collapse"
   - "Why Words Matter in the Agentic Era"
   - "Architecting a Cognitive System: Building my AI-augmented second brain"
 ---
